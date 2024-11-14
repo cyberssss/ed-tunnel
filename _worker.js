@@ -5,7 +5,7 @@ import { connect } from 'cloudflare:sockets';
 // [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
 let userID = '1d52d9ee-f05c-4a95-b1e9-2583c0d90be1';
 
-const พร็อกซีไอพีs = ['138.2.94.123'];
+const พร็อกซีไอพีs = ['154.126.93.121', '84.244.69.29', '103.9.188.72', '217.136.130.31', '213.203.177.219', '79.124.62.26', '213.203.177.218', '5.2.212.133'];
 
 // if you want to use ipv6 or single พร็อกซีไอพี, please add comment at this line and remove comment at the next line
 let พร็อกซีไอพี = พร็อกซีไอพีs[Math.floor(Math.random() * พร็อกซีไอพีs.length)];
@@ -79,6 +79,7 @@ export default {
 					default:
 						// return new Response('Not found', { status: 404 });
 						// For any other path, reverse proxy to 'ramdom website' and return the original response, caching it in the process
+						const hostnames = ['youtube.com', 'paytm.com', 'discord.com', 'store.steampowered.com', 'dota2.com', 'yahoo.com', 'phonepe.com'];
 						const randomHostname = cn_hostnames[Math.floor(Math.random() * cn_hostnames.length)];
 						const newHeaders = new Headers(request.headers);
 						newHeaders.set('cf-connecting-ip', '1.2.3.4');
